@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <p>authorized</p>
+</head>
+
+<body>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/main.js"></script>
+
+    <p>Welcome to algo trading</p>
+    <p>Please select your algo to initiate trade</p>
+    <label for="instrument">Select your trade instrument:</label>
+
+    <select name="instruments" id="instrument">
+      <option value="nifty">Nifty</option>
+      <option value="banknifty">Bank-Nifty</option>
+      <option value="finnifty">Fin-Nifty</option>
+      <option value="crude">Crude Oil</option>
+    </select>
+    <button onclick="run_golden_crossover_strategy()" type="button" id="btn-adx">
+        <span>Golden Crossover Strategy trade</span>
+    </button>
+</body>
+
+</html>
