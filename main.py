@@ -232,13 +232,13 @@ def time_in_range(start, end, current):
 
 
 def is_it_trade_time():
-    start_first_time_window = datetime.time(9, 25, 0)
-    end_first_time_window = datetime.time(10, 45, 0)
+    start_first_time_window = datetime.time(9, 45, 0)
+    end_first_time_window = datetime.time(12, 30, 0)
     current_first_time_window = datetime.datetime.now().time()
     first_time_window = time_in_range(start_first_time_window, end_first_time_window, current_first_time_window)
     if first_time_window == False:
-        start_second_time_window = datetime.time(12, 45, 0)
-        end_second_time_window = datetime.time(14, 30, 0)
+        start_second_time_window = datetime.time(12, 30, 0)
+        end_second_time_window = datetime.time(16, 00, 0)
         current_second_time_window = datetime.datetime.now().time()
         second_time_window = time_in_range(start_second_time_window, end_second_time_window, current_second_time_window)
 
@@ -354,8 +354,8 @@ def run_golden_crossover_strategy():
                     print("Taking call path")
                     path = "CALL"
                     if 50 >= rsi <= 75:
-                        if volume1 > 125000:
-                            if volume2 > 12500:
+                        if volume1 > 90000:
+                            if volume2 > 90000:
                                 if st < current_price:
                                     if vwma > current_price:
                                         optionchain = get_option_chain_dataframe("NIFTY")
@@ -396,8 +396,8 @@ def run_golden_crossover_strategy():
                     print("Taking put path")
                     path = "PUT"
                     if 40 < rsi > 25:
-                        if volume1 > 125000:
-                            if volume2 > 12500:
+                        if volume1 > 90000:
+                            if volume2 > 90000:
                                 if st < current_price:
                                     if vwma > current_price:
                                         optionchain = get_option_chain_dataframe("NIFTY")
